@@ -1,3 +1,19 @@
+require_relative './breakfast'
+require_relative './lunch'
+require_relative './dinner'
+require_relative './snacks'
+#  Save these first lines for tha ASCII stuff
+# have an ASCII "hello" 
+
+# cal = "https://www.calculator.net/calorie-calculator.html"
+# learn = "https://bit.ly/36cWhZU"
+
+puts "This application uses Caloric Maintenance as foundation of how much YOU are eating."
+puts "If you would like to learn more about Caloric Maintenace click here => https://bit.ly/36cWhZU"
+puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:"
+
+# make sure to error check this, so that if someone puts something other than an integer it gets custom error
+maintenace = gets.chomp.to_i
 
 
 loop do
