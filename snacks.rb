@@ -1,0 +1,2 @@
+class Snacks
+end
