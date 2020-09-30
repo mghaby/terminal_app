@@ -2,19 +2,28 @@ require_relative './breakfast'
 require_relative './lunch'
 require_relative './dinner'
 require_relative './snacks'
-#  Save these first lines for tha ASCII stuff
-# have an ASCII "hello" 
-
-# cal = "https://www.calculator.net/calorie-calculator.html"
-# learn = "https://bit.ly/36cWhZU"
+# ---------------------------------------------------------------------------------
+# Ascii:
+puts "
+_    _      _ _         __          __  _                          _ 
+| |  | |    | | |        \ \        / / | |                        | |
+| |__| | ___| | | ___     \ \  /\  / /__| | ___ ___  _ __ ___   ___| |
+|  __  |/ _ \ | |/ _ \     \ \/  \/ / _ \ |/ __/ _ \| '_ ` _ \ / _ \ |
+| |  | |  __/ | | (_) |     \  /\  /  __/ | (_| (_) | | | | | |  __/_|
+|_|  |_|\___|_|_|\___( )     \/  \/ \___|_|\___\___/|_| |_| |_|\___(_)
+                    |/                                               
+                                                                     
+"
+# --------------------------------------------------------------------
 
 puts "This application uses Caloric Maintenance as foundation of how much YOU are eating."
+puts ""
 puts "If you would like to learn more about Caloric Maintenace click here => https://bit.ly/36cWhZU"
+puts ""
 puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:"
 
 # make sure to error check this, so that if someone puts something other than an integer it gets custom error
 maintenace = gets.chomp.to_i
-
 
 loop do
 puts "Great, what woud you like to do? 1 = add a food or 2 = finish eating for the day"

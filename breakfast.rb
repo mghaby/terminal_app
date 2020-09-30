@@ -16,6 +16,7 @@ class Breakfast
     def calorie_add(cals)
     @breakc = cals
     end
+    
     # def initialize(calorie)
     #     @calorie = calorie
     # end
