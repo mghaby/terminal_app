@@ -13,7 +13,8 @@ _______  __________       _         _______
 | (   ) || (     | |     | |       | |   | |
 | )   ( || (____/\| (____/\| (____/\\ | (___) |
 |/     \|(_______/(_______/(_______/(_______) "
-# --------------------------------------------------------------------
+# ------------- Calorie Maintenance thing
+
 puts ""
 puts "This application uses Caloric Maintenance as foundation of how much YOU are eating."
 puts ""
@@ -21,8 +22,11 @@ puts "If you would like to learn more about Caloric Maintenace click here => htt
 puts ""
 puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:"
 
+# ----------------------------- actual calorie maintenace value
 # make sure to error check this, so that if someone puts something other than an integer it gets custom error
 maintenace = gets.chomp.to_i
+
+# ----------------------------logging loop
 
 loop do
 puts "Great, what woud you like to do? 1 = add a food or 2 = finish eating for the day"
