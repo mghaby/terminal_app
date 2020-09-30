@@ -58,3 +58,17 @@ option = gets.chomp.to_i
     else break
     end
 end
+
+# total_sum = @breakc.sum + @lunchc.sum + @dinnerc.sum + @snacksc.sum
+
+eating = maintenace - total_sum 
+# put the finish eating thing here
+case eating
+    when eating > maintenace
+        puts "You have overeaten by #{eating} calories"
+    
+    when eating = maintenace
+        puts "You have eaten exactly at maintenace"
+
+    else puts "You have overeaten your calories by #{eating}"
+end
