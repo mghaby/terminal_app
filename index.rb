@@ -32,13 +32,12 @@ maintenace = gets.chomp.to_i
 # ----------------------------logging loop
 
 loop do
-option = %w(Log Finish)
-prompt.multi_select("What would you like to do?", option)
-
-    if option == 1
+option = %w("Log" "Finish")
+annswer = self.select("What would you like to do?", option)
+    if annswer == "Log"
         time = %w(Breakfast Lunch Dinner Snacks)
-        prompt.multi_select("When did you eat?", time)
-            if time == "breakfast"
+        testr = self.select("When did you eat?", time)
+            if testr == Breakfast
                 Breakfast.bruh
                 puts "How many calories was this?"
                 cals = gets.chomp.to_i
