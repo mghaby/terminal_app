@@ -45,8 +45,9 @@ selection = prompt.select("Testing?", %w(log finish))
             selection1 = prompt.select("When did you eat?", %w(breakfast lunch dinner snacks))
             case selection1
             when "breakfast"
-                puts "1"
-            
+                Breakfast.nmd
+                breakf = []
+               breakf << 
             when "lunch"
                 puts "2"
             

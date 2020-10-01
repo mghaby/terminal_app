@@ -5,8 +5,8 @@ class Breakfast
     def initialize(food, calorie)
         @food = food
         @calorie = calorie
-        @breakf = []
-        @breakc = []
+        @@breakf = []
+        @@breakc = []
     end
     
     def food_add(foods)
@@ -17,10 +17,16 @@ class Breakfast
     @breakc = cals
     end
 
-    def bruh
+    def abc
         puts "What food have you eaten?"
-        foods = gets.chomp.downcase
-        @breakf << foods
+        food = gets.chomp.downcase
+        puts "How many calories was the food?"
+        calorie = gets.chomp.downcase
+        x = self.new(food, calorie)
+        x.food_add
+        x.calorie_add
+        @breakf << @food
+        @breakc << @calorie
     end
     
     # def initialize(calorie)
@@ -39,7 +45,9 @@ class Breakfast
 
 end
 
-
+def nmd
+    puts "pass"
+end
 # def add_food(food)
 #     test = Breakfast.new(food)
 #     @test = << test
