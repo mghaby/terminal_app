@@ -5,29 +5,25 @@ class Breakfast
     def initialize(food, calorie)
         @food = food
         @calorie = calorie
-        @@breakf = []
-        @@breakc = []
+        @breakf = []
+        @breakc = []
+    end
+        
+    def food_add(a = nil)
+        a = gets.chomp.downcase
+        @breakf << a
+    end
+
+    def cal_add(b = nil)
+        b = gets.chomp.to_i
+        @breakc << b
     end
     
-    def food_add(foods)
-    @breakf << foods
-    end
 
-    def calorie_add(cals)
-    @breakc = cals
-    end
 
-    def abc
-        puts "What food have you eaten?"
-        food = gets.chomp.downcase
-        puts "How many calories was the food?"
-        calorie = gets.chomp.downcase
-        x = self.new(food, calorie)
-        x.food_add
-        x.calorie_add
-        @breakf << @food
-        @breakc << @calorie
-    end
+    # a = Testr.new("bruh", "abc")
+    # a.fml
+    # a.fml2
     
     # def initialize(calorie)
     #     @calorie = calorie
@@ -45,9 +41,6 @@ class Breakfast
 
 end
 
-def nmd
-    puts "pass"
-end
 # def add_food(food)
 #     test = Breakfast.new(food)
 #     @test = << test
