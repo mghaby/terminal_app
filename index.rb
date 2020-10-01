@@ -30,51 +30,40 @@ puts "Please click here to calculate your Caloric Maintenace => https://www.calc
 maintenace = gets.chomp.to_i
 
 # ----------------------------logging loop
+# selection = prompt.select("Testing?", %w(breakfast lunch diner snacks))
+# case selection
+# when "breakfast"
+#     puts "1"
+# else 
+#     puts "abc"
+# end
 
 loop do
-option = %w("Log" "Finish")
-annswer = self.select("What would you like to do?", option)
-    if annswer == "Log"
-        time = %w(Breakfast Lunch Dinner Snacks)
-        testr = self.select("When did you eat?", time)
-            if testr == Breakfast
-                Breakfast.bruh
-                puts "How many calories was this?"
-                cals = gets.chomp.to_i
-                Breakfast.food_add(foods)
-                Breakfast.calorie_add(cals)
-
-                elsif time == "lunch"
-                puts "What food did you eat?"
-                foods = gets.chomp.downcase
-                puts "How many calories was this?"
-                cals = gets.chomp.to_i
-                Lunch.food_add(foods)
-                Lunch.calorie_add(cals)
-
-                elsif time == "dinner"
-                puts "What food did you eat?"
-                foods = gets.chomp.downcase
-                puts "How many calories was this?"
-                cals = gets.chomp.to_i
-                Dinner.food_add(foods)
-                Dinner.calorie_add(cals)
-
-                elsif time == "snacks"
-                puts "What food did you eat?"
-                foods = gets.chomp.downcase
-                puts "How many calories was this?"
-                cals = gets.chomp.to_i
-                Snacks.food_add(foods)
-                Snacks.calorie_add(cals)
-            end
-    else break
+selection = prompt.select("Testing?", %w(log finish))
+    case selection
+    when "log"
+            selection1 = prompt.select("When did you eat?", %w(breakfast lunch dinner snacks))
+            case selection1
+            when "breakfast"
+                puts "1"
+            
+            when "lunch"
+                puts "2"
+            
+            when "dinner"
+                puts "3"
+            
+            when "snacks"
+                puts "4"
+    when "finish"
+            break
+    end
     end
 end
 
 # total_sum = @breakc.sum + @lunchc.sum + @dinnerc.sum + @snacksc.sum
 
-eating = maintenace - total_sum 
+# eating = maintenace - total_sum 
 # put the finish eating thing here
 case eating
     when eating > maintenace
