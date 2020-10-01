@@ -16,6 +16,12 @@ class Breakfast
     def calorie_add(cals)
     @breakc = cals
     end
+
+    def bruh
+        puts "What food have you eaten?"
+        foods = gets.chomp.downcase
+        @breakf << foods
+    end
     
     # def initialize(calorie)
     #     @calorie = calorie

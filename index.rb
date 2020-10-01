@@ -2,6 +2,9 @@ require_relative './breakfast'
 require_relative './lunch'
 require_relative './dinner'
 require_relative './snacks'
+require "tty-prompt"
+
+prompt = TTY::Prompt.new
 # ---------------------------------------------------------------------------------
 # Ascii:
 puts "
@@ -29,15 +32,14 @@ maintenace = gets.chomp.to_i
 # ----------------------------logging loop
 
 loop do
-puts "Great, what woud you like to do? 1 = add a food or 2 = finish eating for the day"
-option = gets.chomp.to_i
+option = %w(Log Finish)
+prompt.multi_select("What would you like to do?", option)
 
     if option == 1
-        puts "What did you eat? breakfast, lunch, dinner or snacks?"
-        time = gets.chomp.downcase
+        time = %w(Breakfast Lunch Dinner Snacks)
+        prompt.multi_select("When did you eat?", time)
             if time == "breakfast"
-                puts "What food did you eat?"
-                foods = gets.chomp.downcase
+                Breakfast.bruh
                 puts "How many calories was this?"
                 cals = gets.chomp.to_i
                 Breakfast.food_add(foods)
