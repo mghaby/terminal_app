@@ -79,12 +79,15 @@ selection = prompt.select("Testing?", %w(log finish))
         eating = maintenace - total_sum 
         case eating
         when eating > maintenace
+            puts ""
             puts "You have overeaten by #{eating} calories"
         
         when eating = maintenace
+            puts ""
             puts "You have eaten exactly at maintenace"
     
-        else puts "You have overeaten your calories by #{eating}"
+        else puts ""
+            puts "You have overeaten your calories by #{eating}"
     end
     end
 end
