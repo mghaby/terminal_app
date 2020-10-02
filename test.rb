@@ -31,8 +31,9 @@ class Testr
     def fml2
         puts @cats
     end
+
 end
 
-a = Testr.new("bruh", "abc")
-a.fml
-a.fml2
+# a = Testr.new("b", "abc")
+# a.fml
+# a.fml2

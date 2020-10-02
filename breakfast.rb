@@ -8,22 +8,17 @@ class Breakfast
         @breakf = []
         @breakc = []
     end
-        
-    def food_add(a = nil)
-        a = gets.chomp.downcase
-        @breakf << a
+
+    def food_add
+        @breakf << gets.chomp.downcase
     end
 
-    def cal_add(b = nil)
-        b = gets.chomp.to_i
-        @breakc << b
+    def cal_add
+        @breakc << gets.chomp.to_i
     end
-    
-
-
-    # a = Testr.new("bruh", "abc")
-    # a.fml
-    # a.fml2
+    # a = Breakfast.new("x", "y")
+    # a.food_add
+    # a.cal_add
     
     # def initialize(calorie)
     #     @calorie = calorie

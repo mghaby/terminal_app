@@ -1,4 +1,3 @@
-class Index
 require_relative './breakfast'
 require_relative './lunch'
 require_relative './dinner'
@@ -31,9 +30,6 @@ puts "Please click here to calculate your Caloric Maintenace => https://www.calc
 maintenace = gets.chomp.to_i
 
 # ---------------------breakfast instance variable
-def initialize
-    @breakf = []
-end
 
 
 # ----------------------------logging loop
@@ -53,18 +49,32 @@ selection = prompt.select("Testing?", %w(log finish))
             case selection1
             when "breakfast"
             puts "What food did you eat?"
-            a = Breakfast.food_add(a)
+            a = Breakfast.new("a", "b")
+            a.food_add
             puts "How many calories was this?"
-            b = Breakfast.cal_add(b)
+            a.cal_add
 
             when "lunch"
-                puts "2"
+            puts "What food did you eat?"
+            b = Lunch.new("c", "d")
+            b.food_add
+            puts "How many calories was this?"
+            b.cal_add
             
             when "dinner"
-                puts "3"
+            puts "What food did you eat?"
+            c = Dinner.new("e", "f")
+            c.food_add
+            puts "How many calories was this?"
+            c.cal_add
             
             when "snacks"
-                puts "4"
+            puts "What food did you eat?"
+            d = Snacks.new("g", "h")
+            d.food_add
+            puts "How many calories was this?"
+            d.cal_add
+
     when "finish"
             break
     end
@@ -83,5 +93,4 @@ case eating
         puts "You have eaten exactly at maintenace"
 
     else puts "You have overeaten your calories by #{eating}"
-end
 end
