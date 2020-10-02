@@ -1,4 +1,4 @@
-# require_relative './breakfast.rb'
+require_relative './breakfast.rb'
 # require "tty-prompt"
 
 # prompt = TTY::Prompt.new
@@ -14,40 +14,20 @@
         #     end
 
 
-# -------------------------------------- method testing
-# class Testr
-#     def initialize(cat, dog)
-#         @cat = cat
-#         @dog = dog
-#         @cats = []
-#     end
-    
-#     def fml(abc = nil)
-#         abc = gets
-#         @cats << abc
+# maintenace = 200
+# total_sum = 2600
+# eating = maintenace - total_sum
 
-#     end
+# case eating
+# when eating > maintenace
+#     puts "You have overeaten by #{eating} calories"
 
-#     def fml2
-#         puts @cats
-#     end
+# when eating = maintenace
+#     puts "You have eaten exactly at maintenace"
 
+# else puts ""
+#     puts "You have overeaten your calories by #{eating}"
 # end
 
-# a = Testr.new("b", "abc")
-# a.fml
-# a.fml2
-maintenace = 200
-total_sum = 2600
-eating = maintenace - total_sum
-
-case eating
-when eating > maintenace
-    puts "You have overeaten by #{eating} calories"
-
-when eating = maintenace
-    puts "You have eaten exactly at maintenace"
-
-else puts ""
-    puts "You have overeaten your calories by #{eating}"
-end
+l = Breakfast.new("x", "y")
+l.bruh
