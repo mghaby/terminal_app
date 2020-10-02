@@ -74,14 +74,23 @@ selection = prompt.select("Testing?", %w(log finish))
             d.food_add
             puts "How many calories was this?"
             d.cal_add
-
     when "finish"
-            break
+        total_sum = @breakc.sum + @lunc.sum + @dinc.sum + @snacc.sum
+        eating = maintenace - total_sum 
+        case eating
+        when eating > maintenace
+            puts "You have overeaten by #{eating} calories"
+        
+        when eating = maintenace
+            puts "You have eaten exactly at maintenace"
+    
+        else puts "You have overeaten your calories by #{eating}"
     end
     end
 end
 
-# total_sum = @breakc.sum + @lunchc.sum + @dinnerc.sum + @snacksc.sum
+
+# total_sum = @breakc.sum + @lunc.sum + @dinc.sum + @snacc.sum
 
 # eating = maintenace - total_sum 
 # put the finish eating thing here
