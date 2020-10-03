@@ -11,3 +11,7 @@ gem "tty-prompt", "~> 0.22.0"
 gem "colorize", "~> 0.8.1"
 
 gem "rspec", "~> 3.9"
+
+gem "progress_bar", "~> 1.3.1"
+
+gem "tty-font", "~> 0.5.0"
