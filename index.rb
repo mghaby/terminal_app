@@ -21,7 +21,7 @@ puts ""
 puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:".colorize(:green)
 
 # ----------------------------- actual calorie maintenace value
-# make sure to error check this, so that if someone puts something other than an integer it gets custom error
+# make error be if maintenace = 0 flag for invalid input coz if not integer itll = 0
 maintenace = gets.chomp.to_i
 
 # ----------------------------logging loop

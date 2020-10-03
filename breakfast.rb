@@ -14,6 +14,7 @@ class Breakfast
     end
 
     def cal_add
+        # cannot error check this for a 0 input as there are 0 calorie options
         @breakc << gets.chomp.to_i
     end
 
