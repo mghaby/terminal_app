@@ -3,6 +3,8 @@ require_relative './lunch'
 require_relative './dinner'
 require_relative './snacks'
 require "tty-prompt"
+require 'colorize'
+require 'colorized_string'
 
 prompt = TTY::Prompt.new
 # ---------------------------------------------------------------------------------
@@ -19,11 +21,11 @@ _______  __________       _         _______
 # ------------- Calorie Maintenance thing
 
 puts ""
-puts "This application uses Caloric Maintenance as foundation of how much YOU are eating."
+puts "This application uses Caloric Maintenance as foundation of how much YOU are eating.".colorize(:blue)
 puts ""
-puts "If you would like to learn more about Caloric Maintenace click here => https://bit.ly/36cWhZU"
+puts "If you would like to learn more about Caloric Maintenace click here => https://bit.ly/36cWhZU".colorize(:red)
 puts ""
-puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:"
+puts "Please click here to calculate your Caloric Maintenace => https://www.calculator.net/calorie-calculator.html and enter your Maintenance value below:".colorize(:green)
 
 # ----------------------------- actual calorie maintenace value
 # make sure to error check this, so that if someone puts something other than an integer it gets custom error
@@ -42,27 +44,27 @@ selection = prompt.select("What would you like to do?", %w(log finish))
         selection1 = prompt.select("When did you eat?", %w(breakfast lunch dinner snacks))
         case selection1
         when "breakfast"
-        puts "What food did you eat?"
+        puts "What food did you eat?".colorize(:light_blue)
         a.food_add
-        puts "How many calories was this?"
+        puts "How many calories was this?".colorize(:light_blue)
         a.cal_add
 
         when "lunch"
-        puts "What food did you eat?"
+        puts "What food did you eat?".colorize(:light_blue)
         b.food_add
-        puts "How many calories was this?"
+        puts "How many calories was this?".colorize(:light_blue)
         b.cal_add
             
         when "dinner"
-        puts "What food did you eat?"
+        puts "What food did you eat?".colorize(:light_blue)
         c.food_add
-        puts "How many calories was this?"
+        puts "How many calories was this?".colorize(:light_blue)
         c.cal_add
             
         when "snacks"
-        puts "What food did you eat?"
+        puts "What food did you eat?".colorize(:light_blue)
         d.food_add
-        puts "How many calories was this?"
+        puts "How many calories was this?".colorize(:light_blue)
         d.cal_add
     end
     when "finish"
@@ -79,17 +81,17 @@ under_eat = maintenace - total_sum
 
 if total_sum > maintenace
     puts ""
-    puts "You have overeaten by #{over_eat} calories"
+    puts "You have overeaten by #{over_eat} calories".colorize(:red).on_blue.underline
     break
         
 elsif total_sum == maintenace
     puts ""
-    puts "You have eaten exactly at maintenace"
+    puts "You have eaten exactly at maintenace".colorize(:red).on_blue.underline
     break
     
 else total_sum < maintenace 
     puts ""
-    puts "You have undereaten your calories by #{under_eat} calories"
+    puts "You have undereaten your calories by #{under_eat} calories".colorize(:green).on_black.underline
     break
 end
 end
