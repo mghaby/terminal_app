@@ -11,6 +11,8 @@ prompt = TTY::Prompt.new
 require 'progress_bar'
 bar = ProgressBar.new
 
+class CustomMethod < StandardError
+end
 # ---------------------------------------------------------------------------------
 # Ascii:
 puts font.write("HELLO").colorize(:green)
@@ -24,7 +26,13 @@ puts "Please click here to calculate your Caloric Maintenace => https://www.calc
 
 # ----------------------------- actual calorie maintenace value
 # make error be if maintenace = 0 flag for invalid input coz if not integer itll = 0
+begin
 maintenace = gets.chomp.to_i
+raise CustomMethod,
+"An error has occured, input is either 0 or invalid" if maintenace <= 0
+rescue
+retry
+end
 
 # ----------------------------logging loop
 a = Breakfast.new("a", "b")
