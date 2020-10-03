@@ -6,7 +6,7 @@ class Breakfast
         @food = food
         @calorie = calorie
         @breakf = []
-        @breakc = [1, 2, 3]
+        @breakc = []
     end
 
     def food_add
@@ -17,9 +17,8 @@ class Breakfast
         @breakc << gets.chomp.to_i
     end
 
-    def bruh
+    def sum1
         x = @breakc.sum
-        puts x
     end
 
 end

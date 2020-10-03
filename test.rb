@@ -1,4 +1,4 @@
-require_relative './breakfast.rb'
+# require_relative './breakfast.rb'
 # require "tty-prompt"
 
 # prompt = TTY::Prompt.new
@@ -29,5 +29,6 @@ require_relative './breakfast.rb'
 #     puts "You have overeaten your calories by #{eating}"
 # end
 
-l = Breakfast.new("x", "y")
-l.bruh
+# l = Breakfast.new("x", "y")
+# l.bruh
+

@@ -30,6 +30,10 @@ puts "Please click here to calculate your Caloric Maintenace => https://www.calc
 maintenace = gets.chomp.to_i
 
 # ----------------------------logging loop
+a = Breakfast.new("a", "b")
+b = Lunch.new("c", "d")
+c = Dinner.new("e", "f")
+d = Snacks.new("g", "h")
 
 loop do
 selection = prompt.select("What would you like to do?", %w(log finish))
@@ -39,28 +43,24 @@ selection = prompt.select("What would you like to do?", %w(log finish))
         case selection1
         when "breakfast"
         puts "What food did you eat?"
-        a = Breakfast.new("a", "b")
         a.food_add
         puts "How many calories was this?"
         a.cal_add
 
         when "lunch"
         puts "What food did you eat?"
-        b = Lunch.new("c", "d")
         b.food_add
         puts "How many calories was this?"
         b.cal_add
             
         when "dinner"
         puts "What food did you eat?"
-        c = Dinner.new("e", "f")
         c.food_add
         puts "How many calories was this?"
         c.cal_add
             
         when "snacks"
         puts "What food did you eat?"
-        d = Snacks.new("g", "h")
         d.food_add
         puts "How many calories was this?"
         d.cal_add
@@ -70,20 +70,26 @@ selection = prompt.select("What would you like to do?", %w(log finish))
     end
 end
 
-# eating = maintenace - total_sum 
-# -----------------finish eating loop
-# use bruh method in breakfast as a way to add everything, need to do the breakfast.new thing in test.rb for it to work
-total_sum = @breakc.sum + @lunc.sum + @dinc.sum + @snacc.sum
-        eating = maintenace - total_sum 
-        case eating
-        when eating > maintenace
-            puts ""
-            puts "You have overeaten by #{eating} calories"
+# ----------------finish eating loop
+
+loop do
+total_sum = a.sum1 + b.sum2 + c.sum3 + d.sum4
+over_eat = total_sum - maintenace
+under_eat = maintenace - total_sum
+
+if total_sum > maintenace
+    puts ""
+    puts "You have overeaten by #{over_eat} calories"
+    break
         
-        when eating = maintenace
-            puts ""
-            puts "You have eaten exactly at maintenace"
+elsif total_sum == maintenace
+    puts ""
+    puts "You have eaten exactly at maintenace"
+    break
     
-        else puts ""
-            puts "You have overeaten your calories by #{eating}"
-        end
+else total_sum < maintenace 
+    puts ""
+    puts "You have undereaten your calories by #{under_eat} calories"
+    break
+end
+end

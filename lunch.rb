@@ -14,4 +14,9 @@ class Lunch
     def cal_add
         @lunc << gets.chomp.to_i
     end
+
+    def sum2
+        y = @lunc.sum
+    end
+
 end

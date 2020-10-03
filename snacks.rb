@@ -14,4 +14,8 @@ class Snacks
     def cal_add
         @snacc << gets.chomp.to_i
     end
+
+    def sum4
+        h = @snacc.sum
+    end
 end

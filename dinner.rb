@@ -14,4 +14,8 @@ class Dinner
     def cal_add
         @dinc << gets.chomp.to_i
     end
+
+    def sum3
+        z = @dinc.sum
+    end
 end
