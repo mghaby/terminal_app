@@ -7,8 +7,10 @@ require 'colorize'
 require 'colorized_string'
 require 'tty-font'
 font = TTY::Font.new(:doom)
-
 prompt = TTY::Prompt.new
+require 'progress_bar'
+bar = ProgressBar.new
+
 # ---------------------------------------------------------------------------------
 # Ascii:
 puts font.write("HELLO").colorize(:green)
@@ -71,6 +73,11 @@ loop do
 total_sum = a.sum1 + b.sum2 + c.sum3 + d.sum4
 over_eat = total_sum - maintenace
 under_eat = maintenace - total_sum
+puts "Calculating...".colorize(:green)
+100.times do
+    sleep 0.01
+    bar.increment!
+  end
 
 if total_sum > maintenace
     puts ""
