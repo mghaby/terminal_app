@@ -5,22 +5,15 @@ require_relative './snacks'
 require "tty-prompt"
 require 'colorize'
 require 'colorized_string'
+require 'tty-font'
+font = TTY::Font.new(:doom)
 
 prompt = TTY::Prompt.new
 # ---------------------------------------------------------------------------------
 # Ascii:
-puts "
-_______  __________       _         _______ 
-|\     /|(  ____ \ ( \\     ( \\       (  ___  )
-| )   ( || (   \ /| (     | (       | (   ) |
-| (___) || (__   | |     | |       | |   | |
-|  ___  ||  __)  | |     | |       | |   | |
-| (   ) || (     | |     | |       | |   | |
-| )   ( || (____/\| (____/\| (____/\\ | (___) |
-|/     \|(_______/(_______/(_______/(_______) "
+puts font.write("HELLO").colorize(:green)
 # ------------- Calorie Maintenance thing
 
-puts ""
 puts "This application uses Caloric Maintenance as foundation of how much YOU are eating.".colorize(:blue)
 puts ""
 puts "If you would like to learn more about Caloric Maintenace click here => https://bit.ly/36cWhZU".colorize(:red)
@@ -81,12 +74,12 @@ under_eat = maintenace - total_sum
 
 if total_sum > maintenace
     puts ""
-    puts "You have overeaten by #{over_eat} calories".colorize(:red).on_blue.underline
+    puts "You have overeaten by #{over_eat} calories".colorize(:green).on_black.underline
     break
         
 elsif total_sum == maintenace
     puts ""
-    puts "You have eaten exactly at maintenace".colorize(:red).on_blue.underline
+    puts "You have eaten exactly at maintenace".colorize(:green).on_black.underline
     break
     
 else total_sum < maintenace 
