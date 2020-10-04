@@ -75,8 +75,7 @@ selection = prompt.select("What would you like to do?", %w(log finish))
     end
 end
 
-# ----------------finish eating loop
-
+# ----------------loading bar for the calorie - maintenance feature
 loop do
 total_sum = a.sum1 + b.sum2 + c.sum3 + d.sum4
 over_eat = total_sum - maintenace
@@ -87,6 +86,7 @@ puts "Calculating...".colorize(:green)
     bar.increment!
   end
 
+# ----------------finish eating loop
 if total_sum > maintenace
     puts ""
     puts "You have overeaten by #{over_eat} calories".colorize(:green).on_black.underline
